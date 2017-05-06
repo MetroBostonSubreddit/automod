@@ -1,0 +1,2 @@
+# automod
+Automoderator rules
