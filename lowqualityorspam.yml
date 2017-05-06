@@ -1,0 +1,46 @@
+# Remove top-level comments that are less than 5 characters
+---
+    type: comment
+    body_shorter_than: 5
+    is_top_level: true
+    action: remove
+
+# Self post under 10 characters
+---
+    type: text submission
+    body_shorter_than: 10
+    action: remove
+    
+# Text submission that only contains a URL
+---
+    type: text submission
+    body (regex, full-text): '(\[.*?\]\()?https?://\S+\)?'
+    action: remove
+    Comment: |
+        Your submission was automatically removed because it is a text submission with just a URL. Please message the moderators if this is a mistake. 
+
+
+# Remove mobile links
+---
+    domain (starts-with): [m., mobile.]
+    action: remove
+    Comment: |
+        Your submission was automatically removed because you linked to the mobile version of a website. 
+
+        Please submit a non-mobile link instead. If a non-mobile link is not available, please message the mods.
+        
+# Users with negative karma.
+---
+    author:
+        comment_karma: "< -1"
+    action: remove
+    modmail: The above {{kind}} is by /u/{{author}} and removed due to low user karma. Please investigate.
+    
+# Users with new accounts. Throwaways *are* sometimes legit, so send a modmail.
+---
+    author:
+        account_age: "< 1 days"
+    action: remove
+    modmail: The above {{kind}} is by /u/{{author}} and removed due to being a new account. It might be legitimate use of a throwaway; please investigate.
+    Comment: |
+        Your submission was automatically removed because your account is too new; we're trying to stop spam. Throwaways for anonymity are OK in some circumstances; the moderators have been messaged to investigate and your post/comment may be approved.
