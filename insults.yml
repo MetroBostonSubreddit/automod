@@ -1,0 +1,8 @@
+# ########## MetroBostonSubreddit/automod/master/insults.yml
+# Amuse the users, maybe they'll play nice. Or intentionally set out to trigger it. ¯\_(ツ)_/¯
+
+---
+    title+body (regex): ["a(ss|rse|es)([ -]?holes?)?","b(i|\\*)o?(tch|\\*{3})(y|es)?","cocks?([ -]?suck(ers?|ing)?)?","cum(ming|[ -]shots?)?","cunts?","((mother|motha|mutha)[ -]?)?f(u?c?k?k|\\*ck|\\*{0,2}k|\\*{3})(er|ed|ing|s)?", "s(h(i|ar?|\\*)t|\\*{3}|h\\*{2})(s|ter|e|ting)?"]
+    message: |
+        https://www.youtube.com/watch?v=-GSAcLob0zs
+        (Swear better than our regex's, please. This is a *classy* sub.)
